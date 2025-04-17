@@ -44,11 +44,8 @@ def create_report(paths: List[str], title:str, func=get_data) -> None:
     count_all_request = 0
 
     count_all_methods = {
-        'DEBUG':0 ,
-        'INFO':0,
-        'WARNING':0,
-        'ERROR':0,
-        'CRITICAL':0
+        log_method: 0
+        for log_method in all_log_levels
     }
 
     # Преобразуем данные в список списков для DataFrame

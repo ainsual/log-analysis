@@ -2,6 +2,7 @@ import argparse
 from datetime import datetime
 
 from app import create_report
+from multi_func import get_data_multi
 
 
 def main():
@@ -16,6 +17,7 @@ def main():
                         )
     args = parser.parse_args()
     create_report(args.log_files, args.report)
+    create_report(args.log_files, args.report, func=get_data_multi)
 
 if __name__ == "__main__":
     main()
